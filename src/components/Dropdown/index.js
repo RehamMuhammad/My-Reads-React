@@ -1,9 +1,9 @@
 import React from "react";
 
-function Dropdown() {
+function Dropdown({onChange}) {
   return (
     <div className="book-shelf-changer">
-      <select>
+      <select onChange={onChange}>
         <option value="move" disabled>
           Move to...
         </option>

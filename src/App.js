@@ -12,14 +12,16 @@ function App() {
   }, [])
   console.log(books)
 
+ 
+
 
   return (
     <div className="app">
       <Header />
 
-      <BookShelf shelf="Currently Reading" books={books.filter((book) => book.shelf === "currentlyReading")} />
+      <BookShelf shelf="Currently Reading" books={books.filter((book) => book.shelf === "currentlyReading")}/>
       <BookShelf shelf="Read" books={books.filter((book) => book.shelf === "read")} />
-      <BookShelf shelf="Want to Read" books={books.filter((book) => book.shelf === "wantToRead")} />
+      <BookShelf shelf="Want to Read" books={books.filter((book) => book.shelf === "wantToRead")}/>
 
 
     </div>
