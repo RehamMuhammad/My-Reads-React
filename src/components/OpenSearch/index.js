@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function OpenSearch() {
     return (
         <div className="open-search">
-            <button>Add a Book</button>
+            <Link to="/search"><button>Add a Book</button></Link>
         </div>
     )
 }

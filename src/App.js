@@ -2,6 +2,7 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import * as BooksAPI from './BooksAPI'
 import { BookShelf, Header, OpenSearch } from './components';
+import AppRoutes from './AppRoutes';
 
 function App() {
 
