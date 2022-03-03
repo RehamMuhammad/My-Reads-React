@@ -1,10 +1,11 @@
 import React from "react";
 
-function Dropdown({onChange}) {
+function Dropdown({ onChange}) {
+
   return (
     <div className="book-shelf-changer">
       <select onChange={onChange}>
-        <option value="move" disabled>
+      <option value="move" disabled> 
           Move to...
         </option>
         <option value="currentlyReading">Currently Reading</option>
