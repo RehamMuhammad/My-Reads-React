@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import * as BooksAPI from './BooksAPI'
-import { Book, Header } from './components';
+import { Book, BookShelf, Header } from './components';
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Book title="tit" authors="au" />
+      <BookShelf shelf="Cur" />
     </div>
   );
 
