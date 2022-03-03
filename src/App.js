@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import * as BooksAPI from './BooksAPI'
+import { Book } from './components';
 
 function App() {
   
@@ -11,10 +12,10 @@ useEffect(()=>{
 },[])
   console.log(books)
 
-  
+
   return (
     <div className="app">
- 
+ <Book title="tit" authors="au" />
       </div>
   );
 
