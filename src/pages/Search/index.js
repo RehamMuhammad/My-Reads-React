@@ -6,6 +6,8 @@ import { BookShelf } from '../../components';
 function SearchPage() {
     const [searchWord, setSearchWord] = useState("");
     const [resultBooks, setResultBooks] = useState([]);
+    const [books, setBooks] = useState([])
+
 
 
     const searchBook = async (query) => {
@@ -19,7 +21,6 @@ function SearchPage() {
         console.log("Book", book, "Shelf", shelfName)
     }
 
-    const [books, setBooks] = useState([])
 
     useEffect(() => {
         if (searchWord) {
