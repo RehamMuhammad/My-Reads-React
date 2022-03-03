@@ -9,4 +9,4 @@ function OpenSearch() {
     )
 }
 
-export {OpenSearch} 
+export { OpenSearch } 
