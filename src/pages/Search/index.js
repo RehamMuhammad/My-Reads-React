@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { SearchInput } from '../../components'
 import * as BooksAPI from "../../BooksAPI"
 import { BookShelf } from '../../components';
+import _ from "lodash"
 
 function SearchPage() {
     const [searchWord, setSearchWord] = useState("");
@@ -11,6 +12,7 @@ function SearchPage() {
     //Get All Books have the Search keyword on Initialization by getting all books Fun.
     useEffect(() => {
         getAllBooks()
+        return console.log("cleanUp")
     }, [searchWord])
 
     const getAllBooks = async () => {
@@ -21,8 +23,15 @@ function SearchPage() {
     //Get All Books have the Search keyword by search Fun.
     const searchBook = async (query) => {
         setSearchWord(query)
-        await BooksAPI.search(query).then((res) => setResultBooks([...res, ...books])).catch((e) => console.log(e))
+        await handleSearch(query)
     }
+
+    const handleSearch = useCallback(
+        _.debounce(async (query) => {
+            await BooksAPI.search(query).then((res) => setResultBooks([...res, ...books])).catch((e) => console.log(e))
+        }, 1000),
+        []
+    );
 
     //Update Books Shelves
     const updateShelf = async (book, shelfName) => {

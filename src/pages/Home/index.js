@@ -10,6 +10,7 @@ function Home() {
     //Get All Books on Initialization
     useEffect(() => {
         getAllBooks()
+    return console.log("cleanUp")
     }, [shelfChanged])
     console.log(books)
 
