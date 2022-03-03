@@ -10,7 +10,7 @@ function BookShelf({ shelf, books }) {
 
                     {books.map((book) => (
                         <li key={book.id}>
-                            <Book title={book.title} authors={book.authors} />
+                            <Book title={book.title} authors={book.authors} cover={book.imageLinks.thumbnail} />
                         </li>
                     ))}
 
