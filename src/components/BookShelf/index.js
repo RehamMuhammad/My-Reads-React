@@ -10,7 +10,7 @@ function BookShelf({ shelf, books, updateShelf }) {
 
                     {books.map((book) => (
                         <li key={book.id}>
-                            <Book title={book.title} authors={book.authors&&book.authors.length>1? book.authors.join(", ") : book.authors } cover={book.imageLinks.thumbnail} updateShelf={(e) => updateShelf(book, e.target.value)} shelfValue={book.shelf} />
+                            <Book title={book.title} authors={book.authors&&book.authors.length>1? book.authors.join(", ") : book.authors } cover={book.imageLinks? book.imageLinks.thumbnail:""} updateShelf={(e) => updateShelf(book, e.target.value)} shelfValue={book.shelf} />
                         </li>
                     ))}
 
