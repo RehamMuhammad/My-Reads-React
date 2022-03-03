@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import * as BooksAPI from './BooksAPI'
-import { BookShelf, Header } from './components';
+import { BookShelf, Header, OpenSearch } from './components';
 
 function App() {
 
@@ -30,10 +30,10 @@ const updateShelf = async (book, shelfName) => {
   return (
     <div className="app">
       <Header />
-      <BookShelf shelf="Read" books={books.filter((book) => book.shelf === "read")} updateShelf={updateShelf}/>
       <BookShelf shelf="Currently Reading" books={books.filter((book) => book.shelf === "currentlyReading")} updateShelf={updateShelf}/>
+      <BookShelf shelf="Read" books={books.filter((book) => book.shelf === "read")} updateShelf={updateShelf}/>
       <BookShelf shelf="Want to Read" books={books.filter((book) => book.shelf === "wantToRead")} updateShelf={updateShelf}/>
-
+<OpenSearch />
 
     </div>
   );
