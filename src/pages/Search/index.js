@@ -1,9 +1,12 @@
 import React from 'react'
+import { SearchInput } from '../../components'
 
 function SearchPage() {
-  return (
-    <div>SearchPage</div>
-  )
+    return (
+        <div className="search-books">
+         <SearchInput />
+        </div>
+    )
 }
 
 export default SearchPage

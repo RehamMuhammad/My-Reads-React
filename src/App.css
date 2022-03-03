@@ -112,6 +112,8 @@ body, .app {
   font-size: 0;
   border: none;
   outline: none;
+  cursor: pointer;
+
 }
 
 button:active {
