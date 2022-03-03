@@ -10,12 +10,12 @@ function SearchPage() {
 
     const searchBook = async (query) => {
         setSearchWord(query)
-        await BooksAPI.search(searchWord).then((res) => setResultBooks([...res, ...books])).catch((e) => setResultBooks(books))
+        await BooksAPI.search(query).then((res) => setResultBooks([...res, ...books])).catch((e)=>console.log(e))
     }
 
 
     const updateShelf = async (book, shelfName) => {
-        await BooksAPI.update(book, shelfName);
+        await BooksAPI.update(book, shelfName).catch((e)=>console.log(e))
         console.log("Book", book, "Shelf", shelfName)
     }
 
@@ -34,7 +34,7 @@ function SearchPage() {
     }, [searchWord])
 
     const getAllBooks = async () => {
-            await BooksAPI.getAll().then(res => setBooks(res.filter((book) => book.title === searchWord)))
+            await BooksAPI.getAll().then(res => setBooks(res.filter((book) => book.title === searchWord))).catch((e)=>console.log(e))
 
         
 

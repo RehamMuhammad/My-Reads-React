@@ -16,11 +16,11 @@ function App() {
   console.log(books)
 
 const getAllBooks = async () => {
-  await BooksAPI.getAll().then(res => setBooks(res))
+  await BooksAPI.getAll().then(res => setBooks(res)).catch((e) => console.log(e))
 }
 
 const updateShelf = async (book, shelfName) => {
-  await BooksAPI.update(book, shelfName);
+  await BooksAPI.update(book, shelfName).catch((e) => console.log(e))
   console.log("Book",book,"Shelf",shelfName)
   setShelfChanged(!shelfChanged)
 
