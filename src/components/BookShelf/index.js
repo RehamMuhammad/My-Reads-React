@@ -1,5 +1,7 @@
 import React from 'react'
 import { Book } from '..'
+import propTypes from 'prop-types'
+
 
 function BookShelf({ shelf, books, updateShelf }) {
     return (
@@ -18,5 +20,12 @@ function BookShelf({ shelf, books, updateShelf }) {
         </div>
     )
 }
+
+BookShelf.propTypes ={
+    shelf:propTypes.string,
+    books:propTypes.array,
+    updateShelf:propTypes.func,
+}
+
 
 export { BookShelf } 
