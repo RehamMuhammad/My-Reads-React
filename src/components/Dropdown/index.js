@@ -1,7 +1,6 @@
 import React from "react";
 import propTypes from 'prop-types'
 
-
 function Dropdown({ onChange, shelfValue }) {
     return (
         <div className="book-shelf-changer">

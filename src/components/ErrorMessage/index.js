@@ -1,4 +1,6 @@
 import React from 'react'
+import propTypes from 'prop-types'
+
 
 function ErrorMessage({message}) {
     return (
@@ -8,4 +10,7 @@ function ErrorMessage({message}) {
     )
 }
 
+ErrorMessage.propTypes ={
+    message:propTypes.string,
+}
 export {ErrorMessage} 
