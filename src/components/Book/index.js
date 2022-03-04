@@ -18,7 +18,7 @@ function Book({ title, authors, cover, updateShelf, shelfValue }) {
 
 Book.propTypes ={
     title:propTypes.string,
-    authors:propTypes.string,
+    authors:propTypes.string || propTypes.array,
     cover:propTypes.string,
     updateShelf:propTypes.func,
     shelfValue:propTypes.string,
