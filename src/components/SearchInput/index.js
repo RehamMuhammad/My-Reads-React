@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom'
-
+import propTypes from 'prop-types'
 function SearchInput({ searchWord, onSearch }) {
     return (
         <div className="search-books-bar">
@@ -12,6 +12,11 @@ function SearchInput({ searchWord, onSearch }) {
             </div>
         </div>
     );
+}
+
+SearchInput.propTypes ={
+    onSearch:propTypes.func,
+    searchWord:propTypes.string,
 }
 
 export { SearchInput };
