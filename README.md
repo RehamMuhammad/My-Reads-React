@@ -14,3 +14,14 @@ search for specific book by title or author & view each book details.
 
 5. Now you can view the app in your browser just open:
 ### `[http://localhost:3000]`
+
+
+## App Features
+
+- Once the user opens the app he would be able to view Some books Categorized by shelves.
+
+- In the home page the user can view his books cards, update their shelf & click any of his books cards to view more about it in a seperate page.
+
+- The user can search the books by their title or authors and add them to his shelves.
+
+  
