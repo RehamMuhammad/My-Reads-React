@@ -3,7 +3,7 @@ import React from "react";
 function Dropdown({ onChange, shelfValue }) {
     return (
         <div className="book-shelf-changer">
-            <select onChange={onChange} value={shelfValue} >
+            <select onChange={onChange} value={shelfValue?shelfValue :"none"} >
                 <option value="move" disabled>
                     Move to...
                 </option>

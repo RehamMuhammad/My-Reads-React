@@ -25,6 +25,9 @@ function SearchPage() {
                     let booksWithAuthor = allMainPageBooks.filter((book) => book.authors.join(" ").toLowerCase().includes(query))
                     setBooks(booksWithTitle.concat(booksWithAuthor))
                     console.log(booksWithTitle.concat(booksWithAuthor))
+                    if(booksWithTitle.length>0 || booksWithAuthor.length>0 ){
+                        setError("")
+                    }
                 }).catch((e) => console.log(e)),
 
                 //Get All Books from searching books func. By title & Author
@@ -32,8 +35,11 @@ function SearchPage() {
                     let searchResultBooks = res;
                     if (searchResultBooks.error){
                         setError("No Reults Found")
+                        setResultBooks([])
+                        setBooks([])
                     }else{
                         setResultBooks(searchResultBooks)
+                        setError("")
                     }
                 }).catch((e) => console.log(e))])
         }, 1000),
@@ -54,7 +60,7 @@ function SearchPage() {
         <div className="search-books">
             <SearchInput searchWord={searchWord} onSearch={(e) => searchBook(e.target.value)} />
             {searchWord && (books.length > 0 || resultBooks.length > 0) && <BookShelf shelf="Search Results" books={_.uniqBy(books.concat(resultBooks), "id")} updateShelf={updateShelf} />}
-            {searchWord && error && books.length<1 && <ErrorMessage message={error} />}
+            {error && searchWord && books.length<1 && <ErrorMessage message={error} />}
         </div>
     )
 }
