@@ -19,9 +19,10 @@ function BookDetails() {
         shelf: "",
         language: ""
     })
-
+    //Get Single Book Details By ID
     useEffect(() => {
         getBookDetails(id)
+        return console.log("cleanUp")
     }, [])
 
     const getBookDetails = async (bookId) => {

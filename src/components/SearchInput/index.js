@@ -14,9 +14,9 @@ function SearchInput({ searchWord, onSearch }) {
     );
 }
 
-SearchInput.propTypes ={
-    onSearch:propTypes.func,
-    searchWord:propTypes.string,
+SearchInput.propTypes = {
+    onSearch: propTypes.func,
+    searchWord: propTypes.string,
 }
 
 export { SearchInput };

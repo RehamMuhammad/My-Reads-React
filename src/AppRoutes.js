@@ -9,7 +9,6 @@ function AppRoutes() {
       <Route path='/search' element={<SearchPage />} />
       <Route path='/book/:id' element={<BookDetailsPage />} />
       <Route path='*' element={<NotFoundPage />} />
-
     </Routes>
   )
 }

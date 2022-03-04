@@ -1,5 +1,5 @@
 import React from 'react'
-
+import propTypes from 'prop-types'
 function BookCard({ cover, title, subtitle, authors, description, pageCount, averageRating, ratingsCount, publisher, publishedDate, language, shelf }) {
     return (
         <div className='container'>
@@ -30,6 +30,21 @@ function BookCard({ cover, title, subtitle, authors, description, pageCount, ave
             </div>
         </div>
     )
+}
+
+BookCard.propTypes = {
+    cover: propTypes.string,
+    title: propTypes.string,
+    subtitle: propTypes.string,
+    authors: propTypes.string,
+    description: propTypes.string,
+    pageCount: propTypes.number,
+    averageRating: propTypes.number,
+    ratingsCount: propTypes.number,
+    publisher: propTypes.string,
+    publishedDate: propTypes.string,
+    language: propTypes.string,
+    shelf: propTypes.string,
 }
 
 export { BookCard } 
