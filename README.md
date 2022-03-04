@@ -24,4 +24,8 @@ search for specific book by title or author & view each book details.
 
 - The user can search the books by their title or authors and add them to his shelves.
 
+## Used Technologies & Packages
+- **Backend APIs** I used BooksAPIS provided from Udacity.
+ 
+- **Front-End** ReactJs library v.17 for Rendering UI, bootsrap v.5 for Styling, Prop Types for props types validation & lodash to enhance performance.
   
