@@ -21,6 +21,10 @@ body, .app {
 .main-font-color{
   color:var(--main)
 }
+
+.know-more:hover{
+  color:white
+}
 /* main page */
 
 .list-books-title {
@@ -69,7 +73,7 @@ body, .app {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #2e7d32;
+  background: var(--main);
   background-image: url('./icons/add.svg');
   background-repeat: no-repeat;
   background-position: center;

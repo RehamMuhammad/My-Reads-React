@@ -10,10 +10,14 @@ function BookDetails() {
         imageLinks: "",
         subtitle: "",
         authors: "",
-        description:"",
-        averageRating:"",
-        ratingsCount:"",
-        
+        pageCount: 0,
+        description: "",
+        averageRating: 0,
+        ratingsCount: 0,
+        publisher: "",
+        publishedDate: "",
+        shelf: "",
+        language: ""
     })
 
     useEffect(() => {
@@ -31,7 +35,13 @@ function BookDetails() {
             <div className='container py-5 my-5'>
                 <BookCard title={book.title}
                     cover={book.imageLinks ? book.imageLinks.thumbnail : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9T4eZdmlbj1NKFcbcizY5I0AkfL6t0qaidw&usqp=CAU"}
-                    subtitle={book.subtitle} authors={book.authors && book.authors.join(", ")} description={book.description} />
+                    subtitle={book.subtitle} authors={book.authors && book.authors.join(", ")} description={book.description} pageCount={book.pageCount}
+                    averageRating={book.averageRating !== undefined ? book.averageRating : 0}
+                    ratingsCount={book.ratingsCount !== undefined ? book.ratingsCount : 0}
+                    publisher={book.publisher}
+                    publishedDate={book.publishedDate}
+                    shelf={book.shelf}
+                    language={book.language} />
             </div>
         </div>
     )
