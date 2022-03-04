@@ -1,7 +1,9 @@
 # My Reads App
 
-It's a Simple Books Web App which enables the user to categorize his books,
+- It's a Simple Books Web App which enables the user to categorize his books,
 search for specific book by title or author & view each book details. 
+
+- It's a part of FWD Nanodegree program presented from Udacity **(React Development Cross-Skilling)**.
 
 ## Installation and Setup Instructions
 1. Clone this Repository or if you've the zipped folder unzip it.
@@ -29,3 +31,15 @@ search for specific book by title or author & view each book details.
  
 - **Front-End** ReactJs library v.17 for Rendering UI, bootsrap v.5 for Styling, Prop Types for props types validation & lodash to enhance performance.
   
+## Feature Work
+- Add Athentication flow to the project and divide users to authors, readers or both.
+
+- Each user has profile information andd he can view & update them.
+
+- Make it Possible to the user to create his own shelf, review & rate a book, follow author & Save his quotes.
+  
+- Allow the user to follow other users and enable him to see their information, shelves, books & all different updates.
+
+- Enhance the UI/UX of the app.
+
+
