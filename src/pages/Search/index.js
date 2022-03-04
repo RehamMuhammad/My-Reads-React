@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import { SearchInput, BookShelf, ErrorMessage } from '../../components'
 import * as BooksAPI from "../../BooksAPI"
 import _ from "lodash"
@@ -17,6 +17,8 @@ function SearchPage() {
 
     const handleSearch = useCallback(
         _.debounce(async (query) => {
+            setBooks([])
+            setResultBooks([])
             Promise.all(
                 //Get All Books from getting books func. By title & Author
                 [BooksAPI.getAll().then(res => {
@@ -25,7 +27,7 @@ function SearchPage() {
                     let booksWithAuthor = allMainPageBooks.filter((book) => book.authors.join(" ").toLowerCase().includes(query))
                     setBooks(booksWithTitle.concat(booksWithAuthor))
                     console.log(booksWithTitle.concat(booksWithAuthor))
-                    if(booksWithTitle.length>0 || booksWithAuthor.length>0 ){
+                    if (booksWithTitle.length > 0 || booksWithAuthor.length > 0) {
                         setError("")
                     }
                 }).catch((e) => console.log(e)),
@@ -33,11 +35,11 @@ function SearchPage() {
                 //Get All Books from searching books func. By title & Author
                 BooksAPI.search(query).then((res) => {
                     let searchResultBooks = res;
-                    if (searchResultBooks.error){
+                    if (searchResultBooks.error) {
                         setError("No Reults Found")
                         setResultBooks([])
                         setBooks([])
-                    }else{
+                    } else {
                         setResultBooks(searchResultBooks)
                         setError("")
                     }
@@ -60,7 +62,7 @@ function SearchPage() {
         <div className="search-books">
             <SearchInput searchWord={searchWord} onSearch={(e) => searchBook(e.target.value)} />
             {searchWord && (books.length > 0 || resultBooks.length > 0) && <BookShelf shelf="Search Results" books={_.uniqBy(books.concat(resultBooks), "id")} updateShelf={updateShelf} />}
-            {error && searchWord && books.length<1 && <ErrorMessage message={error} />}
+            {error && searchWord && books.length < 1 && <ErrorMessage message={error} />}
         </div>
     )
 }
