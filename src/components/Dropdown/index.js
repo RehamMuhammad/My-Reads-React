@@ -1,4 +1,6 @@
 import React from "react";
+import propTypes from 'prop-types'
+
 
 function Dropdown({ onChange, shelfValue }) {
     return (
@@ -14,6 +16,11 @@ function Dropdown({ onChange, shelfValue }) {
             </select>
         </div>
     );
+}
+
+Dropdown.propTypes ={
+    onChange:propTypes.func,
+    shelfValue:propTypes.string,
 }
 
 export { Dropdown };
