@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { SearchInput, BookShelf } from '../../components'
+import { SearchInput, BookShelf, ErrorMessage } from '../../components'
 import * as BooksAPI from "../../BooksAPI"
 import _ from "lodash"
 
@@ -54,12 +54,7 @@ function SearchPage() {
         <div className="search-books">
             <SearchInput searchWord={searchWord} onSearch={(e) => searchBook(e.target.value)} />
             {searchWord && (books.length > 0 || resultBooks.length > 0) && <BookShelf shelf="Search Results" books={_.uniqBy(books.concat(resultBooks), "id")} updateShelf={updateShelf} />}
-            {searchWord && error && books.length<1 && (
-                <div className='container my-5 py-5 text-center'>
-                    <p className="text-danger alert-danger py-5 my-5 fw-bold fs-1">{error}</p>
-                    </div>
-            )
-            }
+            {searchWord && error && books.length<1 && <ErrorMessage message={error} />}
         </div>
     )
 }
