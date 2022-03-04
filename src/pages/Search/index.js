@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { SearchInput } from '../../components'
+import { SearchInput, BookShelf } from '../../components'
 import * as BooksAPI from "../../BooksAPI"
-import { BookShelf } from '../../components';
 import _ from "lodash"
 
 function SearchPage() {

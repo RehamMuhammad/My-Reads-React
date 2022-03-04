@@ -1,5 +1,6 @@
 import React from 'react'
 import { Dropdown } from '..'
+import propTypes from 'prop-types'
 
 
 function Book({ title, authors, cover, updateShelf, shelfValue }) {
@@ -13,6 +14,14 @@ function Book({ title, authors, cover, updateShelf, shelfValue }) {
             <div className="book-authors">{authors}</div>
         </div>
     )
+}
+
+Book.propTypes ={
+    title:propTypes.string,
+    authors:propTypes.string,
+    cover:propTypes.string,
+    updateShelf:propTypes.func,
+    shelfValue:propTypes.string,
 }
 
 export { Book }
