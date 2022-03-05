@@ -31,7 +31,7 @@ search for specific book by title or author & view each book details.
  
 - **Front-End** ReactJs library v.17 for Rendering UI, bootsrap v.5 for Styling, Prop Types for props types validation & lodash to enhance performance.
   
-## Feature Work
+## Future Work
 - Add Athentication flow to the project and divide users to authors, readers or both.
 
 - Each user has profile information andd he can view & update them.
